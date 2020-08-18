@@ -4,7 +4,7 @@ Ghost is a free, open, simple blogging platform. Visit the project's website at 
 
 ## Ghost version 3.X
 
-#### One click deploy on heroku click below -->
+#### One click deploy on heroku click below...
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
