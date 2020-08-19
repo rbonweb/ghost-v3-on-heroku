@@ -8,8 +8,28 @@ var url = require("url");
 var appRoot = path.join(__dirname, "..");
 
 function createConfig() {
-  var databaseConfig;
-
+  var fileStorage, databaseConfig;
+  if (!!process.env.CLOUDINARY_URL) {
+    fileStorage = true;
+    storage = {
+      active: "ghost-storage-cloudinary",
+      "ghost-storage-cloudinary": {
+        useDatedFolder: false,
+        upload: {
+          use_filename: true,
+          unique_filename: false,
+          overwrite: false,
+          folder: "ghost-blog-images",
+          tags: ["blog"],
+        },
+        fetch: {
+          quality: "auto",
+          secure: true,
+          cdn_subdomain: true,
+        },
+      },
+    };
+  }
   if (!!process.env.MYSQL_HOST) {
     databaseConfig = {
       client: "mysql",
@@ -52,6 +72,7 @@ function createConfig() {
         },
       },
     },
+    fileStorage: fileStorage,
     database: databaseConfig,
     server: {
       host: "0.0.0.0",

@@ -13,6 +13,11 @@
       "value": "https://YOURAPPNAME.herokuapp.com",
       "required": true
     },
+    "CLOUDINARY_URL": {
+      "description": "Enter the API Environment variable URL Provided by Cloudinary",
+      "value": "CLOUDINARY_URL=cloudinary://***:**@**",
+      "required": true
+    },
     "MYSQL_HOST": {
       "description": "Example: 127.0.0.1(Any IP Address or hostname)",
       "required": false
