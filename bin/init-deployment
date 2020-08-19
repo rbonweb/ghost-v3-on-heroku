@@ -7,4 +7,4 @@ echo "config.production.json →"
 cat "config.production.json"
 
 # bin/wait-for-db
-knex-migrator init --mgpath node_modules/ghost
+# knex-migrator init --mgpath node_modules/ghost
