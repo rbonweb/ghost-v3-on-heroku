@@ -10,10 +10,7 @@
   "private": true,
   "version": "1.25.5",
   "dependencies": {
-    "casper": "github:tryghost/Casper#3.0.12",
-    "ghost": "^3.30.0",
-    "mysql": "^2.18.1",
-    "sqlite3": "^5.0.0"
+    "ghost": "^3.30.0"
   },
   "engines": {
     "node": "12.x"
