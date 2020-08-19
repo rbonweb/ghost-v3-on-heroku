@@ -6,6 +6,5 @@ pwd
 echo "config.production.json →"
 cat "config.production.json"
 
-mv node_modules/ghost-storage-cloudinary content/adapters/storage
 bin/wait-for-db
 knex-migrator init --mgpath node_modules/ghost
