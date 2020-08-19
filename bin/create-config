@@ -42,8 +42,6 @@ function createConfig() {
         password: process.env.MYSQL_PASSWORD,
         database: process.env.MYSQL_DB,
       },
-      pool: { min: 0, max: 5 },
-      debug: false,
     };
   } else {
     databaseConfig = {
