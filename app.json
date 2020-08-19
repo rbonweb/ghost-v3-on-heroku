@@ -14,8 +14,20 @@
       "value": "https://YOURAPPNAME.herokuapp.com",
       "required": true
     },
-    "MYSQL_DATABASE_URL": {
-      "description": "Example: mysql://DB_USER:DB_PASSWORD@DB_HOST:3306/DB_NAME",
+    "MYSQL_HOST": {
+      "description": "Example: 127.0.0.1(Any IP Address or hostname)",
+      "required": false
+    },
+    "MYSQL_USER": {
+      "description": "Database user",
+      "required": false
+    },
+    "MYSQL_PASSWORD": {
+      "description": "Database user's Password",
+      "required": false
+    },
+    "MYSQL_DB": {
+      "description": "Database Name",
       "required": false
     },
     "SMTP_HOST": {

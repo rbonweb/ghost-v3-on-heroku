@@ -5,7 +5,6 @@ var fs = require("fs");
 var path = require("path");
 var url = require("url");
 
-var envValues = require("./common/env-values");
 var appRoot = path.join(__dirname, "..");
 
 function createConfig() {
@@ -35,12 +34,16 @@ function createConfig() {
     fileStorage = false;
     storage = {};
   }
-  if (envValues.mysqlDatabaseUrl) {
+  if (!!process.env.MYSQL_HOST) {
     databaseConfig = {
       client: "mysql",
-      connection: getMysqlConfig(envValues.mysqlDatabaseUrl),
-      pool: { min: 0, max: 5 },
-      debug: false,
+      connection: {
+        host: process.env.MYSQL_HOST,
+        port: 3306,
+        user: process.env.MYSQL_USER,
+        password: process.env.MYSQL_PASSWORD,
+        database: process.env.MYSQL_DB,
+      },
     };
   } else {
     databaseConfig = {
@@ -86,36 +89,6 @@ function createConfig() {
   };
 
   return config;
-}
-
-function getMysqlConfig(connectionUrl) {
-  if (connectionUrl == null) {
-    return {};
-  }
-
-  var dbConfig = url.parse(connectionUrl);
-  if (dbConfig == null) {
-    return {};
-  }
-
-  var dbAuth = dbConfig.auth ? dbConfig.auth.split(":") : [];
-  var dbUser = dbAuth[0];
-  var dbPassword = dbAuth[1];
-
-  if (dbConfig.pathname == null) {
-    var dbName = "ghost";
-  } else {
-    var dbName = dbConfig.pathname.split("/")[1];
-  }
-
-  var dbConnection = {
-    host: dbConfig.hostname,
-    port: dbConfig.port || "3306",
-    user: dbUser,
-    password: dbPassword,
-    database: dbName,
-  };
-  return dbConnection;
 }
 
 var configContents = JSON.stringify(createConfig(), null, 2);
