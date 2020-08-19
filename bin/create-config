@@ -52,8 +52,6 @@ function createConfig() {
         },
       },
     },
-    fileStorage = false,
-    storage = {},
     database: databaseConfig,
     server: {
       host: "0.0.0.0",
