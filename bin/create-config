@@ -35,7 +35,7 @@ function createConfig() {
     fileStorage = false;
     storage = {};
   }
-  if (!!envValues.mysqlDatabaseUrl) {
+  if (envValues.mysqlDatabaseUrl) {
     databaseConfig = {
       client: "mysql",
       connection: getMysqlConfig(envValues.mysqlDatabaseUrl),
