@@ -39,8 +39,9 @@ function createConfig() {
         user: process.env.MYSQL_USER,
         password: process.env.MYSQL_PASSWORD,
         database: process.env.MYSQL_DB,
-        charset: "utf8",
       },
+      pool: { min: 0, max: 5 },
+      debug: false,
     };
   } else {
     databaseConfig = {
