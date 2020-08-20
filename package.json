@@ -12,7 +12,8 @@
   "dependencies": {
     "ghost": "^3.30.0",
     "ghost-cloudinary-store": "^3.3.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.0.0"
   },
   "engines": {
     "node": "10.x"
