@@ -1,1 +1,1 @@
-mv /app/node_modules/ghost-storage-cloudinary /app/node_modules/ghost/core/server/adapters/storage
+mv node_modules/ghost-storage-cloudinary node_modules/ghost/core/server/adapters/storage
