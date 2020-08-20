@@ -14,8 +14,8 @@
       "required": true
     },
     "CLOUDINARY_URL": {
-      "description": "Enter the API Environment variable URL Provided by Cloudinary",
-      "value": "CLOUDINARY_URL=cloudinary://***:**@**",
+      "description": "Enter the API Environment variable URL Provided by Cloudinary(Do not Include \"CLOUDINARY_URL=\")",
+      "value": "cloudinary://***:**@**",
       "required": true
     },
     "MYSQL_HOST": {
