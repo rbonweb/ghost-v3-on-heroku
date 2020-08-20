@@ -19,6 +19,7 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bash bin/copy-cloudinary-plugin.sh"
   }
 }
