@@ -14,8 +14,8 @@ function createConfig() {
   if (!!process.env.CLOUDINARY_URL) {
     fileStorage = true;
     storage = {
-      active: "ghost-storage-cloudinary",
-      "ghost-storage-cloudinary": {
+      active: "ghost-cloudinary-store",
+      "ghost-cloudinary-store": {
         useDatedFolder: false,
         upload: {
           use_filename: true,
