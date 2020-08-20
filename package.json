@@ -11,7 +11,7 @@
   "version": "1.25.5",
   "dependencies": {
     "ghost": "^3.30.0",
-    "ghost-cloudinary-store": "^3.3.0",
+    "ghost-storage-cloudinary": "^2.1.2",
     "mysql": "^2.18.1",
     "sqlite3": "^5.0.0"
   },

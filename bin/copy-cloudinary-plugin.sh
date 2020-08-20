@@ -1,2 +1,1 @@
-mkdir -p /app/content/adapters/storage/ghost-cloudinary-store
-cp -r node_modules/ghost-cloudinary-store /app/content/adapters/storage/
+mv /app/node_modules/ghost-storage-cloudinary /app/node_modules/ghost/core/server/adapters/storage

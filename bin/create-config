@@ -14,22 +14,20 @@ function createConfig() {
   if (!!process.env.CLOUDINARY_URL) {
     fileStorage = true;
     storage = {
-      active: "ghost-cloudinary-store",
-      "ghost-cloudinary-store": {
-        configuration: {
-          image: {
-            quality: "auto:good",
-            secure: "true",
-          },
-          file: {
-            use_filename: "true",
-            unique_filename: "false",
-            phash: "true",
-            overwrite: "false",
-            invalidate: "true",
-            folder: "blog-images",
-            tags: ["blog"],
-          },
+      active: "ghost-storage-cloudinary",
+      "ghost-storage-cloudinary": {
+        useDatedFolder: false,
+        upload: {
+          use_filename: true,
+          unique_filename: false,
+          overwrite: false,
+          folder: "ghost-blog-images",
+          tags: ["blog"],
+        },
+        fetch: {
+          quality: "auto",
+          secure: true,
+          cdn_subdomain: true,
         },
       },
     };
