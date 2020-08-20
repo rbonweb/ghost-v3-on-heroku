@@ -15,6 +15,23 @@ function createConfig() {
     fileStorage = true;
     storage = {
       active: "ghost-cloudinary-store",
+      "ghost-cloudinary-store": {
+        configuration: {
+          image: {
+            quality: "auto:good",
+            secure: "true",
+          },
+          file: {
+            use_filename: "true",
+            unique_filename: "false",
+            phash: "true",
+            overwrite: "false",
+            invalidate: "true",
+            folder: "blog-images",
+            tags: ["blog"],
+          },
+        },
+      },
     };
   }
   if (!!process.env.MYSQL_HOST) {
