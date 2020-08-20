@@ -15,21 +15,6 @@ function createConfig() {
     fileStorage = true;
     storage = {
       active: "ghost-cloudinary-store",
-      "ghost-cloudinary-store": {
-        useDatedFolder: false,
-        upload: {
-          use_filename: true,
-          unique_filename: false,
-          overwrite: false,
-          folder: "ghost-blog-images",
-          tags: ["blog"],
-        },
-        fetch: {
-          quality: "auto",
-          secure: true,
-          cdn_subdomain: true,
-        },
-      },
     };
   }
   if (!!process.env.MYSQL_HOST) {
