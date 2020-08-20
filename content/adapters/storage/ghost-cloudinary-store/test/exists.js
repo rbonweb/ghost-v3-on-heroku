@@ -1,14 +1,13 @@
 'use strict';
 
-const chai = require('chai'),
+var CloudinaryAdapter = require('../index'),
+    chai = require('chai'),
     expect = chai.expect,
     sinon = require('sinon'),
     cloudinary = require('cloudinary').v2,
     path = require('path'),
-    CloudinaryAdapter = require(path.join(__dirname, '../../')),
-    fixtures = require(path.join(__dirname, 'fixtures'));
-
-let cloudinaryAdapter = null;
+    fixtures = require(path.join(__dirname, '/fixtures')),
+    cloudinaryAdapter = null;
 
 describe('exists', function () {
     before(function () {
@@ -17,7 +16,7 @@ describe('exists', function () {
     });
 
     it('returns true when image exists', function (done) {
-        cloudinary.uploader.explicit.callsArgWith(2, null, fixtures.sampleApiResult());
+        cloudinary.uploader.explicit.callsArgWith(2, undefined, fixtures.sampleApiResult());
 
         cloudinaryAdapter.exists(fixtures.mockImage.name).then(function (exists) {
             expect(exists).to.equals(true);
@@ -26,7 +25,7 @@ describe('exists', function () {
     });
 
     it('returns false when image does not exist', function (done) {
-        cloudinary.uploader.explicit.callsArgWith(2, {error: "error"});
+        cloudinary.uploader.explicit.callsArgWith(2, {error: "error"}, undefined);
 
         cloudinaryAdapter.exists(fixtures.mockInexistentImage.name).then(function (exists) {
             expect(exists).to.equals(false);

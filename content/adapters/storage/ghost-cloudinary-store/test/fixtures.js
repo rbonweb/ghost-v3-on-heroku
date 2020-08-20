@@ -1,11 +1,7 @@
 'use strict';
 
-const path = require('path');
+var path = require('path');
 
-/**
- *  Returns a sample API result payload for the upload endpoint
- *  @return {object} The API result sample object
- */
 function sampleApiResult() {
     return {
         public_id: 'favicon',
@@ -24,10 +20,6 @@ function sampleApiResult() {
     };
 }
 
-/**
- *  Returns a plugin-free sample configuration for the adapter
- *  @return {object} The configuration object
- */
 function sampleConfig() {
     return {
         "auth": {
@@ -44,7 +36,7 @@ function sampleConfig() {
             "folder": "",
             "tags": []
         },
-        "fetch": {
+        "display": {
             "quality": "auto",
             "secure": false,
             "cdn_subdomain": false
@@ -52,10 +44,6 @@ function sampleConfig() {
     };
 }
 
-/**
- *  Returns a sample configuration from the intial forked project
- *  @return {object} Legacy config object
- */
 function sampleLegacyConfig() {
     return {
         "cloud_name": "",
@@ -77,16 +65,11 @@ function sampleLegacyConfig() {
     };
 }
 
-/**
- *  Returns a fake image object off the provided imageFile and imageName.
- *  @param {string} imageFile The file path
- *  @param {string} imageName Optional file name, imageFile will be used if not set
- *  @return {object} The image object
- */
 function generateImage(imageFile, imageName) {
+    imageName = typeof imageName !== 'undefined' ? imageName : imageFile;
     return {
         path: path.join(__dirname, imageFile),
-        name: typeof imageName !== 'undefined' ? imageName : imageFile,
+        name: imageName,
         type: 'image/png'
     };
 }

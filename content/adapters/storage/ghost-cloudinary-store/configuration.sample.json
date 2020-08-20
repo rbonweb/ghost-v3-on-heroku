@@ -1,8 +1,7 @@
 {
     "storage": {
-        "active": "ghost-storage-cloudinary",
-        "ghost-storage-cloudinary": {
-            "useDatedFolder": false,
+        "active": "cloudinary-store",
+        "cloudinary-store": {
             "auth": {
                 "cloud_name": "",
                 "api_key": "",
@@ -15,14 +14,11 @@
                 "folder": "blog-images",
                 "tags": ["blog"]
             },
-            "fetch": {
+            "display": {
                 "quality": "auto",
                 "secure": false,
                 "cdn_subdomain": true
             }
         }
-    },
-    "imageOptimization": {
-        "resize": false
     }
 }
