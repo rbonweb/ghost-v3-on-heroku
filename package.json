@@ -10,8 +10,8 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
-    "ghost": "^3.30.0",
-    "ghost-storage-cloudinary": "^2.1.2",
+    "ghost": "^3.31.5",
+    "ghost-storage-cloudinary": "^2.1.3",
     "mysql": "^2.18.1",
     "sqlite3": "^5.0.0"
   },

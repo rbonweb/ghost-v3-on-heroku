@@ -274,8 +274,8 @@ textarea {
   --secondary-foreground-color: #fff;
   --primary-subtle-color: #008080;
   --secondary-subtle-color: #141920;
-  --titles-color: #b4b4b4;
-  --link-color: #b6b7f6;
+  --titles-color: #ffffff;
+  --link-color: #008080;
   --border-color: #008080;
   --primary-border-color: #1d1d1d;
   --secondary-border-color: #0f0f0f;
@@ -1287,8 +1287,7 @@ fieldset {
 }
 .m-nav__left li.nav-current {
   font-weight: 600;
-  border-top: 2px solid #008080;
-  padding: 5px;
+  color: var(--primary-subtle-color);
 }
 .m-nav__left li a {
   color: inherit;
