@@ -8,7 +8,7 @@
   },
   "success_url": "/ghost",
   "env": {
-    "PUBLIC_URL": {
+    "APP_PUBLIC_URL": {
       "description": "The HTTPS URL of this app: either your custom domain or default 'herokuapp.com' hostname.",
       "value": "https://YOURAPPNAME.herokuapp.com",
       "required": true
